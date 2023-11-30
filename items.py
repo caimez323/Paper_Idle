@@ -33,14 +33,19 @@ cutting_pliers_number = 0
 #costly but good base stats
 swiss_knife_multiplier = 4.1
 swiss_knife_price = 700
-swiss_knife_incr = 1.9
+swiss_knife_incr = 1.75
 swiss_knife_name = "Swiss knife"
 swiss_knife_number = 0
 
 
-#
+#sharpening tools
 #same price than before but increase how many reward you get by a %
 #high price increase
+sharpening_tool_multiplier = 0
+sharpening_tool_price = 700
+sharpening_tool_incr = 3
+sharpening_tool_name = "Sharpening tool"
+sharpening_tool_number = 0
 
 
 #
