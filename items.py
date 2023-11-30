@@ -1,5 +1,5 @@
 
-paper = 65
+paper = 99000
 
 
 #Ajouter des upgrades en % /passif /jsp quoi
@@ -23,15 +23,19 @@ knife_number = 0
 
 #cutting pliers
 #not that good but have a bonus multiplier keyword
-cutting_pliers_multiplier = 2.6
+cutting_pliers_multiplier = 2.4
 cutting_pliers_price = 75
 cutting_pliers_incr = 1.6
 cutting_pliers_name = "Cutting pliers"
 cutting_pliers_number = 0
 
-#
+#swiss knife
 #costly but good base stats
-
+swiss_knife_multiplier = 4.1
+swiss_knife_price = 700
+swiss_knife_incr = 1.9
+swiss_knife_name = "Swiss knife"
+swiss_knife_number = 0
 
 
 #
@@ -57,7 +61,8 @@ def get_items_shop():
     0: [None, "DEBUG"],\
     1: [scissors_price, scissors_name, scissors_incr],\
     2: [knife_price,knife_name, knife_incr],\
-    3: [cutting_pliers_price,cutting_pliers_name,cutting_pliers_incr]}
+    3: [cutting_pliers_price,cutting_pliers_name,cutting_pliers_incr],\
+    4: [swiss_knife_price, swiss_knife_name,swiss_knife_incr]}
   
   return dict_shop
   
@@ -66,7 +71,8 @@ def reset_inventory():
     0: [paper, "Paper"],\
     1: [scissors_number, scissors_name],\
     2: [knife_number,knife_name],\
-    3: [cutting_pliers_number,cutting_pliers_name]}
+    3: [cutting_pliers_number,cutting_pliers_name],\
+    4: [swiss_knife_number,swiss_knife_name]}
   
   return inventory
 
@@ -75,7 +81,8 @@ def get_multiplier_dict():
   item_mutli_dict = {0: 0, \
     1: scissors_multiplier,\
     2: knife_multiplier,\
-    3: cutting_pliers_multiplier}
+    3: cutting_pliers_multiplier,\
+    4: swiss_knife_multiplier}
 
   return item_mutli_dict
 
