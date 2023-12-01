@@ -9,6 +9,7 @@ def clear():
   os.system("clear" if OS_SYSTEM == "Linux" else "cls") 
   print("=== PAPER IDLE === Cutting paper...\n")
 
+
 def end_game(theInventory):
   clear()
   print("End of PAPER IDLE")
@@ -22,6 +23,7 @@ def arrond(n):
   if toReturn >n:
     toReturn -= 0.01
   return toReturn
+
 
 
 def get_items_contribution(theInventory,theMulti):
@@ -40,10 +42,11 @@ def get_items_contribution(theInventory,theMulti):
 
 
 def display_ressources(theInventory,theMulti,bonusMulti):
-  #TODO PRINT DANS L ORDRE QUAND MEME
-  itemContr = get_items_contribution(theInventory,theMulti)
+  #Todo print upgrades separatly
+  sortedInventory = dict(sorted(theInventory.items()))
+  itemContr = get_items_contribution(sortedInventory,theMulti)
   print("Bonus multiplier : {}\n".format(bonusMulti))
-  for id, ressources_data in theInventory.items():
+  for id, ressources_data in sortedInventory.items():
     if type(ressources_data[0]) == float and not ressources_data[0].is_integer():
       print("{} : {:.2f} ({})".format(ressources_data[1], ressources_data[0],itemContr[id]))
     else:

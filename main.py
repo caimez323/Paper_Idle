@@ -5,12 +5,8 @@ from common import clear, arrond, display_ressources, end_game
 from items import get_items_shop, reset_inventory, get_multiplier_dict
 from upgrades import get_upgrades_shop
 
-
 #TODOLISt
 #Fix bug with too high qqt
-
-
-
 
 #Addition and ascention
 addition = 1
@@ -51,7 +47,8 @@ def enter_shop(inShop="i"):
   global prec_bought_string
   DISPLAY = False
   clear()
-  print("Welcome to the {} shop : \n".format("upgrades" if inShop == "u" else ""))
+  print("Welcome to the {} shop : \n".format("upgrades" if inShop ==
+                                             "u" else ""))
   print(prec_bought_string)
   if inShop == "i":
     display_shop_items(inventory, dict_shop_items)
@@ -75,28 +72,28 @@ def enter_shop(inShop="i"):
     id_data = dict_shop_items.get(id_in)
   elif inShop == "u":
     id_data = dict_shop_upgrades.get(id_in)
-    
-  if id_data is None :
+
+  if id_data is None:
     prec_bought_string = "Not enough paper or wrong id\n"
     enter_shop(inShop)
   #else
   id_price, id_name, id_increase = id_data
-    
+
   #QQT
   qqt_in = input("qqt : ")
   if qqt_in == "max":
     qqt_in = calculate_max_units(inventory[0][0], id_price, id_increase)
   else:
     qqt_in = int(qqt_in)
-  
+
   #Price to pay
   priceToPay = 0
   for i in range(qqt_in):
     priceToPay += arrond(id_price * id_increase**i)
   if id_price is not None and inventory[0][0] >= priceToPay:
     #reward
-    if not inventory.get(id_in) :
-      inventory[id_in] = [qqt_in,id_name]
+    if not inventory.get(id_in):
+      inventory[id_in] = [qqt_in, id_name]
     else:
       inventory[id_in][0] += qqt_in
     prec_bought_string = "+{} {}\n".format(qqt_in, id_name)
@@ -131,7 +128,7 @@ def gain_function():
     display_ressources(inventory, item_mutli_dict, bonusMulti)
   reward = 1
   for id, itemData in inventory.items():
-    if id < 0 :continue
+    if id < 0: continue
     itemNumber = itemData[0]
     reward += addition * (item_mutli_dict[id] * itemNumber)
   #Asc multi
