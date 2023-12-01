@@ -1,5 +1,4 @@
 import threading
-import os
 
 from shop_scripts import display_shop_items
 from common import clear, arrond, display_ressources, end_game
@@ -9,7 +8,6 @@ from upgrades import get_upgrades_shop
 
 #TODOLISt
 #Fix bug with too high qqt
-#Cannot see the error line when wrong id
 
 
 
@@ -77,7 +75,7 @@ def enter_shop(inShop="i"):
     id_data = dict_shop_upgrades.get(id_in)
     
   if id_data is None :
-    print("Not enough paper or wrong id\n")
+    prec_bought_string = "Not enough paper or wrong id\n"
     enter_shop(inShop)
   #else
   id_price, id_name, id_increase = id_data
@@ -99,7 +97,7 @@ def enter_shop(inShop="i"):
       inventory[id_in] = [qqt_in,id_name]
     else:
       inventory[id_in][0] += qqt_in
-    prec_bought_string = "+{} {}".format(qqt_in, id_name)
+    prec_bought_string = "+{} {}\n".format(qqt_in, id_name)
     inventory[0][0] -= priceToPay
     inventory[0][0] = arrond(inventory[0][0])
     #new price
@@ -109,7 +107,7 @@ def enter_shop(inShop="i"):
       dict_shop_upgrades[id_in][0] = arrond(id_price * id_increase**qqt_in)
     enter_shop(inShop)
   else:
-    print("Not enough paper or wrong id\n")
+    prec_bought_string = "Not enough paper or wrong id\n"
     enter_shop(inShop)
 
 
