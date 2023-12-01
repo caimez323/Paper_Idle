@@ -94,10 +94,10 @@ def enter_shop(inShop="i"):
       dict_shop_items[id_in][0] = arrond(id_price * id_increase**qqt_in)
     elif inShop == "u":
       dict_shop_upgrades[id_in][0] = arrond(id_price * id_increase**qqt_in)
-    enter_shop()
+    enter_shop(inShop)
   else:
     print("Not enough paper or wrong id\n")
-    enter_shop()
+    enter_shop(inShop)
 
 
 def exit_shop():
