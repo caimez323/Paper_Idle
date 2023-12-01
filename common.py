@@ -1,7 +1,12 @@
 import os
+import platform
+
+OS_SYSTEM = platform.system()
+
 
 def clear():
-  os.system("clear") 
+  global OS_SYSTEM
+  os.system("clear" if OS_SYSTEM == "Linux" else "cls") 
   print("=== PAPER IDLE === Cutting paper...\n")
 
 def end_game(theInventory):
