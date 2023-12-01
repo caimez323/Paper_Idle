@@ -1,5 +1,7 @@
 .replit
-_pycache_
+__pycache__
 replit.nix
 pyproject.toml
 poetry.lock
+README.md
+.pythonlibs
