@@ -1,19 +1,15 @@
 
 paper = 99000
 
-
-#Ajouter des upgrades en % /passif /jsp quoi
-
-
-#scissors
-#basic
+#scissors 1
+#basic give manual bonus reward
 scissors_multiplier = 0.7
 scissors_price = 5
 scissors_incr = 1.2
 scissors_name = "Auto scissors"
 scissors_number = 0
 
-#knife
+#knife 2
 #bit better
 knife_multiplier = 1.7
 knife_price = 10
@@ -21,15 +17,15 @@ knife_incr = 1.35
 knife_name = "Knife"
 knife_number = 0
 
-#cutting pliers
+#cutting pliers 3
 #not that good but have a bonus multiplier keyword
-cutting_pliers_multiplier = 2.4
+cutting_pliers_multiplier = 2.0
 cutting_pliers_price = 75
 cutting_pliers_incr = 1.6
 cutting_pliers_name = "Cutting pliers"
 cutting_pliers_number = 0
 
-#swiss knife
+#swiss knife 4
 #costly but good base stats
 swiss_knife_multiplier = 4.1
 swiss_knife_price = 700
@@ -37,15 +33,6 @@ swiss_knife_incr = 1.75
 swiss_knife_name = "Swiss knife"
 swiss_knife_number = 0
 
-
-#sharpening tools
-#same price than before but increase how many reward you get by a %
-#high price increase
-sharpening_tool_multiplier = 0
-sharpening_tool_price = 700
-sharpening_tool_incr = 3
-sharpening_tool_name = "Sharpening tool"
-sharpening_tool_number = 0
 
 
 #
@@ -56,6 +43,10 @@ sharpening_tool_number = 0
 
 #
 #new keyword
+
+
+
+
 
 #++prestige items : 
 
@@ -74,10 +65,7 @@ def get_items_shop():
 def reset_inventory():
   inventory = {\
     0: [paper, "Paper"],\
-    1: [scissors_number, scissors_name],\
-    2: [knife_number,knife_name],\
-    3: [cutting_pliers_number,cutting_pliers_name],\
-    4: [swiss_knife_number,swiss_knife_name]}
+    1: [scissors_number, scissors_name]}
   
   return inventory
 

@@ -23,6 +23,9 @@ def get_items_contribution(theInventory,theMulti):
   itemContributionSum = {}
   theSum = 0
   for theID,theIDData in theInventory.items():
+    if theID < 0 : 
+      itemContributionSum[theID] = 0
+      continue
     itemContributionSum[theID] = theIDData[0] * theMulti[theID]
     theSum += itemContributionSum[theID]
   if theSum == 0 : theSum =1
@@ -32,6 +35,7 @@ def get_items_contribution(theInventory,theMulti):
 
 
 def display_ressources(theInventory,theMulti,bonusMulti):
+  #TODO PRINT DANS L ORDRE QUAND MEME
   itemContr = get_items_contribution(theInventory,theMulti)
   print("Bonus multiplier : {}\n".format(bonusMulti))
   for id, ressources_data in theInventory.items():
