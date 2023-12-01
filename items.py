@@ -27,7 +27,7 @@ cutting_pliers_number = 0
 
 #swiss knife 4
 #costly but good base stats
-swiss_knife_multiplier = 4.1
+swiss_knife_multiplier = 4.2
 swiss_knife_price = 700
 swiss_knife_incr = 1.75
 swiss_knife_name = "Swiss knife"
@@ -61,12 +61,10 @@ def get_items_shop():
     4: [swiss_knife_price, swiss_knife_name,swiss_knife_incr]}
   
   return dict_shop
-  
+
+
 def reset_inventory():
-  inventory = {\
-    0: [paper, "Paper"],\
-    1: [scissors_number, scissors_name]}
-  
+  inventory = {0: [paper, "Paper"]}  
   return inventory
 
 

@@ -51,7 +51,7 @@ def enter_shop(inShop="i"):
   global prec_bought_string
   DISPLAY = False
   clear()
-  print("Welcome to the shop : \n")
+  print("Welcome to the {} shop : \n".format("upgrades" if inShop == "u" else ""))
   print(prec_bought_string)
   if inShop == "i":
     display_shop_items(inventory, dict_shop_items)
@@ -66,6 +66,8 @@ def enter_shop(inShop="i"):
     return
   elif (id_in == "upgrades" or id_in == "up"):
     return enter_shop("u")
+  elif (id_in == "s" or id_in == "shop"):
+    return enter_shop("i")
   #Id
   id_in = int(id_in)
   id_data = None
