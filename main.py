@@ -6,6 +6,14 @@ from common import clear, arrond, display_ressources, end_game
 from items import get_items_shop, reset_inventory, get_multiplier_dict
 from upgrades import get_upgrades_shop
 
+
+#TODOLISt
+#Fix bug with too high qqt
+#Cannot see the error line when wrong id
+
+
+
+
 #Addition and ascention
 addition = 1
 fold = 1
@@ -62,20 +70,25 @@ def enter_shop(inShop="i"):
     return enter_shop("u")
   #Id
   id_in = int(id_in)
+  id_data = None
   if inShop == "i":
     id_data = dict_shop_items.get(id_in)
   elif inShop == "u":
     id_data = dict_shop_upgrades.get(id_in)
-
+    
+  if id_data is None :
+    print("Not enough paper or wrong id\n")
+    enter_shop(inShop)
+  #else
   id_price, id_name, id_increase = id_data
-
+    
   #QQT
   qqt_in = input("qqt : ")
   if qqt_in == "max":
     qqt_in = calculate_max_units(inventory[0][0], id_price, id_increase)
   else:
     qqt_in = int(qqt_in)
-
+  
   #Price to pay
   priceToPay = 0
   for i in range(qqt_in):
